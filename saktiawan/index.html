@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+       <img src="awan.jpeg" alt="Foto Profil" class="foto">
+      <h1>Profil Mahasiswa</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#biodata" class="aktif" data-target="biodata">Biodata</a></li>
+        <li><a href="#pendidikan" data-target="pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman" data-target="pengalaman">Pengalaman</a></li>
+        <li><a href="#keahlian" data-target="keahlian">Keahlian</a></li>
+        <li><a href="#publikasi" data-target="publikasi">Publikasi</a></li>
+      </ul>
+    </nav>
+
+    <section id="konten">
+
+      <article id="biodata" class="panel tampil">
+        <h2>Biodata</h2>
+        <table>
+          <tr><th>NIM</th><td>: 2025081056</td></tr>
+          <tr><th>Nama</th><td>: Saktiawan</td></tr>
+          <tr><th>Agama</th><td>: Islam</td></tr>
+          <tr><th>Tanggal Lahir</th><td>: 22 Mei 2007</td></tr>
+          <tr><th>Tempat Lahir</th><td>: Jakarta</td></tr>
+        </table>
+      </article>
+
+      <article id="pendidikan" class="panel">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li>SD Negeri Cemapaka Putih 1 Tangsel (2013 - 2019)</li>
+          <li>SMP Negeri 03 Tangsel (2019 - 2022)</li>
+          <li>SMA Negeri 10 Tangsel (2022 - 2025)</li>
+        </ul>
+      </article>
+
+      <article id="pengalaman" class="panel">
+        <h2>Pengalaman</h2>
+        <ul>
+          <li>Web Development: Memiliki pengalaman dalam membuat dan mengembangkan website sederhana menggunakan HTML, CSS, dan PHP.</li>
+          <li>Database Management: Mempelajari perancangan dan pengelolaan database menggunakan MySQL serta memahami konsep ERD dan normalisasi database.</li>
+        </ul>
+      </article>
+
+      <article id="keahlian" class="panel">
+        <h2>Keahlian</h2>
+        <ul>
+          <li>Pemrograman Web (HTML, CSS, PHP, JavaScript)</li>
+          <li>Basis Data (MySQL)</li>
+          <li>Analisis dan Perancangan Sistem</li>
+          <li>Pengembangan Aplikasi VR/XR (Unity)</li>
+        </ul>
+      </article>
+
+      <article id="publikasi" class="panel">
+        <h2>Publikasi</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/saktiawan-dwi-rahman-58544137a" target="_blank">Profil LinkedIn</a></li>
+        </ul>
+      </article>
+
+    </section>
+
+    <aside>
+      <h3>Hobi:</h3>
+      <ul>
+        <li>Baca Berita Ekonomi</li>
+        <li>Bola</li>
+        <li>Pemrograman</li>
+        <li>Basket</li>
+      </ul>
+    </aside>
+
+    <footer>
+      <div class="sosmed">
+        <p>Instagram: @saktiawandr</p>
+      </div>
+      <p class="copy">&copy; Copyright 2026. All Rights Reserved</p>
+      <div class="info">
+        <strong>WEB AWAN</strong>
+        <p>Belajar, Berkarya, Berkembang</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Klik menu nav -> tampilkan konten yang sesuai di area section
+    var links  = document.querySelectorAll("nav a");
+    var panels = document.querySelectorAll("#konten .panel");
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("data-target");
+
+        panels.forEach(function (p) { p.classList.remove("tampil"); });
+        links.forEach(function (l) { l.classList.remove("aktif"); });
+
+        document.getElementById(id).classList.add("tampil");
+        this.classList.add("aktif");
+      });
+    });
+  </script>
+</body>
+</html>
